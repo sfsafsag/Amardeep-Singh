@@ -857,23 +857,6 @@ for(let i=0; i < arr.length; i++)
 
 // console.log(groupedWords); // { '3': [ 'bat', 'cat', 'dog' ], '5': [ 'apple', 'banana' ], '4': [ 'egg' ] }
 
-// const employees = [
-//   { name: "John", dept: "HR" },
-//   { name: "Rita", dept: "IT" },
-//   { name: "David", dept: "HR" },
-//   { name: "Anjali", dept: "Finance" }
-// ];
-// let groupedEmployees = {};
-// for(val of employees){
-// 	let emp = val.dept
-// 	if(!groupedEmployees[emp]){
-// 	  groupedEmployees[emp] = []
-// 	}
-// 	groupedEmployees[emp].push(val)
-// }
-// console.log(groupedEmployees)
-
-// const words = ["apple", "banana", "apple", "orange", "banana", "apple"];
 
 // let duplicate = {}
 // for(val of words){
@@ -1109,15 +1092,77 @@ for(let i=0; i < arr.length; i++)
 // }
 // console.log(res) //a2b3c4d1
 
-const obj = {
-  a: '1',
-  b: '2',
-  c: '3'
-};
-let reverse = {}
+// const obj = {
+//   a: '1',
+//   b: '2',
+//   c: '3'
+// };
+// let reverse = {}
 
-for(key in obj){
-  reverse[obj[key]] = key
+// for(key in obj){
+//   reverse[obj[key]] = key
+// }
+// console.log(reverse)
+
+// let arr = [0, 1, 2, 0, 1, 2, 1, 0]
+//   let count0 = 0, count1 = 0, count2 = 0;
+
+// let res = []
+// for (let num of arr) {
+//     if(num == 0){
+//         count0++
+//     }else if(num == 1){
+//         count1++
+//     }else{
+//         count2++
+//     }
+//   }
+  
+//   let result = []
+//    for (let i = 0; i < arr.length; i++) {
+//     if (i < count0){
+//         result.push(0)
+//     }else if(i < count0 + count1){
+//         result.push(1)
+//     }else{
+//         result.push(2)
+//     }
+//   }
+// console.log(result) // [0, 0, 0, 1, 1, 1, 2, 2]
+
+
+let arr = [5, 3, 8, 1, 2];
+
+for (let i = 0; i < arr.length - 1; i++) {
+  let minIndex = i; // 5,3
+  for (let j = i + 1; j < arr.length; j++) {  //  2,3,4
+    if (arr[j] < arr[minIndex]) {  // 2 < 3
+      minIndex = j;    /// 4
+    }
+  }
+
+  // Customized swap (without destructuring)
+  let temp = arr[i]; //5,3
+  arr[i] = arr[minIndex]; // 1 , 2 [1,2,8,5,2]
+  arr[minIndex] = temp; // 5, 
+
+  // [1,3,8,5,2]
+  //[1,2,8,5,3]
 }
-console.log(reverse)
+
+console.log(arr); // [1, 2, 3, 5, 8]
+
+// let arr = [5, 2, 8, 1, 3];
+// let sorted = [];
+
+// while (arr.length) {
+//   let min = Math.min(...arr);       // sabse chhota element dhundo
+//   sorted.push(min);                 // use sorted array me daalo
+//   arr.splice(arr.indexOf(min), 1);  // original array se remove karo
+// }
+// console.log("Sorted:", sorted); // [1, 2, 3, 5, 8]
+
+// let arr = [ [4,7], [1,6,8], [10,64,5]] find bigest number
+
 </script>
+
