@@ -23,7 +23,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        uses: bahmutov/npm-install
+        uses: npm-install
 
       - name: Build project
         run: npm run build
